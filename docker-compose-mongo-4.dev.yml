@@ -1,0 +1,23 @@
+version: '2.1'
+services:
+
+  auth-mongodb:
+    build: mongodb_4
+    ports:
+      - 25000:27017
+
+  account-mongodb:
+    build: mongodb_4
+    ports:
+      - 26000:27017
+
+  statistics-mongodb:
+    build: mongodb_4
+    ports:
+      - 27000:27017
+
+  notification-mongodb:
+    build: mongodb_4
+    ports:
+      - 28000:27017
+

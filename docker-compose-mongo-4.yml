@@ -1,0 +1,64 @@
+version: '2.1'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: "no"
+    ports:
+      - 15672:15672
+      - 5672:5672
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  auth-mongodb:
+    image: sqshq/piggymetrics-mongodb    
+    container_name: "vgrigor-mongodb-small"
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      INIT_DUMP: account-service-dump.js
+    restart: "no"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+        
+ 
+  account-mongodb:
+    image: sqshq/piggymetrics-mongodb    
+    container_name: "vgrigor-account-mongodb"
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      INIT_DUMP: account-service-dump.js
+    restart: "no"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+ 
+  statistics-mongodb:
+    image: sqshq/piggymetrics-mongodb    
+    container_name: "vgrigor-statistics-mongodb"
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      INIT_DUMP: account-service-dump.js
+    restart: "no"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  notification-mongodb:
+    image: sqshq/piggymetrics-mongodb    
+    container_name: "vgrigor-notification-mongodb"
+    environment:
+      MONGODB_PASSWORD: $MONGODB_PASSWORD
+      INIT_DUMP: account-service-dump.js
+    restart: "no"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+ 

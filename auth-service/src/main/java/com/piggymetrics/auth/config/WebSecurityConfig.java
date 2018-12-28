@@ -1,5 +1,6 @@
 package com.piggymetrics.auth.config;
 
+import com.piggymetrics.auth.Encode.SimpleEncoder;
 import com.piggymetrics.auth.service.security.MongoUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +33,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
-                .passwordEncoder(new BCryptPasswordEncoder());
+                //.passwordEncoder(new BCryptPasswordEncoder());
+                .passwordEncoder(new SimpleEncoder());
+
     }
 
     @Override

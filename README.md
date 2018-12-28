@@ -262,7 +262,9 @@ If you'd like to build images yourself (with some changes in the code, for examp
 - http://localhost:80 - Gateway
 - http://localhost:8761 - Eureka Dashboard
 - http://localhost:9000/hystrix - Hystrix Dashboard (Turbine stream link: `http://turbine-stream-service:8080/turbine/turbine.stream`)
+    - http://localhost:8080/hystrix - заменил ПОРТ для windows
 - http://localhost:15672 - RabbitMq management (default login/password: guest/guest)
+    - http://rabbitmq:15672 - заменил HOST для windows 
 
 #### Notes
 All Spring Boot applications require already running [Config Server](https://github.com/sqshq/PiggyMetrics#config-service) for startup. But we can start all containers simultaneously because of `depends_on` docker-compose option.

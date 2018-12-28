@@ -1,3 +1,9 @@
 eureka:
   client:
     enabled: false
+
+#I added this from sample-hystrix-aggregate
+turbine:
+  aggregator:
+    clusterConfig: SAMPLE-HYSTRIX
+  appConfig: SAMPLE-HYSTRIX
